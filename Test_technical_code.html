@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test technical code</title>
+</head>
+<body>
+
+<input type="text" name="angka" id="angka" value="">
+<p id="hasilAkhir"></p>
+<button onclick="generateSegitiga()">Generate segitiga</button>
+<button onclick="generateGanjil()">Generate Bil. Ganjil</button>
+<button onclick="generatePrima()">Generate Bil. Prima</button>
+
+
+</body>
+
+<script type="text/javascript">
+	function generateSegitiga() {
+		var angkaForm = document.getElementById('angka').value;
+		const angkaSubs = [];
+
+		var result = "";
+
+		for (var a = 0; a <= angkaForm.length; a++) {
+			angkaSubs[a] = angkaForm.substring(a, a+1);
+			console.log(angkaSubs[a]);
+		}
+
+		for (var i = 0; i <= angkaForm.length; i++) {
+			
+			if (i === angkaForm.length) {
+				result += "";
+			} else {
+				result += angkaSubs[i];
+				for (var j = 0; j <= i; j++) {
+					result += "0";
+				}
+			}
+			result += "<br>"
+		}
+		document.getElementById("hasilAkhir").innerHTML = result;
+	}
+
+	function generateGanjil() {
+		var angkaForm = document.getElementById('angka').value;
+		const angkaSubs = [];
+
+		var result = "";
+		var resultGanjil = "";
+
+		for (var a = 0; a <= angkaForm.length; a++) {
+			angkaSubs[a] = angkaForm.substring(a, a+1);
+		}
+
+		for (var i = 1; i < angkaForm; i++) {
+			if (i %2 == 1) {
+				result += i;
+				for (var j = 0; j <= i; j++) {
+					if (j %2 == 1) {
+						result += "0";
+					}
+				}
+				result += "<br>"
+			} else {
+				continue;
+			}
+			
+		}
+		document.getElementById("hasilAkhir").innerHTML = result;
+	}
+
+	function generatePrima() {
+		var angkaForm = document.getElementById('angka').value;
+		const angkaSubs = [];
+
+		var result = "";
+
+		for (var a = 0; a <= angkaForm.length; a++) {
+			angkaSubs[a] = angkaForm.substring(a, a+1);
+		}
+
+		for (var i = 1; i < angkaForm; i++) {
+			if (i %2 == 1) {
+				result += i;
+				for (var j = 0; j <= i; j++) {
+					if (j %2 == 0) {
+						result += "0";
+					}
+				}
+				result += "<br>"
+			} else {
+				continue;
+			}
+			
+		}
+		document.getElementById("hasilAkhir").innerHTML = result;
+	}
+	
+
+</script>
+</html>
